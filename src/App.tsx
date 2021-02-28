@@ -40,7 +40,10 @@ export const App = () => {
           <PageHeader>
             <Input.Search placeholder="input search text" onSearch={() => {}} className="test" />
           </PageHeader>
-          <Dashboard modulesGroupsByStatus={modulesGroupsByStatus} previewData={previewData} />
+          <div className="body-wrapper">
+            <Dashboard modulesGroupsByStatus={modulesGroupsByStatus} previewData={previewData} />
+            <div>Slider</div>
+          </div>
         </Fragment>
       )}
     </Fragment>

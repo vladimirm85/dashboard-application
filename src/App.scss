@@ -1,3 +1,5 @@
+@import './scss/variables';
+
 #root{
   height: 100vh;
   display: flex;
@@ -6,4 +8,15 @@
 
 .ant-input-search {
   width: 200px !important;
+}
+
+.body-wrapper {
+  display: flex;
+  height: inherit;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  margin-left: $gap;
+
+  border: 1px solid grey;
 }
