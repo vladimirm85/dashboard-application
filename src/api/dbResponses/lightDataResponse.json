@@ -1,0 +1,32 @@
+{
+  "statuses": [
+    {
+      "status": {
+        "id": "s1",
+        "name": "In progress"
+      },
+      "amount": 14
+    },
+    {
+      "status": {
+        "id": "s2",
+        "name": "Submitted"
+      },
+      "amount": 13
+    },
+    {
+      "status": {
+        "id": "s3",
+        "name": "Ready for release"
+      },
+      "amount": 12
+    },
+    {
+      "status": {
+        "id": "s4",
+        "name": "Draft"
+      },
+      "amount": 1
+    }
+  ]
+}
