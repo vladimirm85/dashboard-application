@@ -36,7 +36,7 @@
       }
 
       .module {
-        height: 50px;
+        height: $row-height;
         margin: 5px 0;
         border: $module-border;
         border-left: $module-border-left;

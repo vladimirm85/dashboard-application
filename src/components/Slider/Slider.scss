@@ -3,10 +3,62 @@
 .sidebar {
   min-width: $sidebar-width;
   margin-right: -$sidebar-width;
-  padding: $gap $gap 0 $gap;
   transition: margin 700ms ease-in-out;
+  position: relative;
 
   border-left: 1px solid grey;
+
+  h3,
+  p {
+    margin: 0;
+    padding: 0;
+  }
+
+  &--close-button {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+  }
+
+  .heading {
+    padding: 40px $gap 0 $gap;
+    font-weight: bold;
+    color: $sidebar-text-color-dark;
+  }
+
+  .row {
+    height: $row-height;
+    width: 100%;
+    color: $sidebar-text-color-blue;
+    padding: $half-gap $gap;
+
+    &-course {
+      font-weight: bold;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    &-module {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      &-name {
+        font-size: 1.2em;
+      }
+
+      &-status {
+        align-self: flex-end;
+        color: $sidebar-text-color-dark;
+      }
+
+      &.active {
+        background-color: $background-active-sidebar;
+        border-left: $module-border-left-sidebar;
+      }
+    }
+  }
 
   &-active {
     margin-right: 0;

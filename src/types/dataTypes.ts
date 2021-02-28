@@ -44,4 +44,13 @@ export interface CoursesData {
 export interface SidebarData {
   activeModulesGroup: ModulesGroupByStatus;
   activeModuleId: string;
+  statusName: string;
+}
+
+export interface StateInterface {
+  isLoading: boolean;
+  previewData: PreviewData[];
+  modulesGroupsByStatus: MapModulesGroupsByStatus;
+  isSidebarOpen: boolean;
+  sidebarData: SidebarData;
 }
