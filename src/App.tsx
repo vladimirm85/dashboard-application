@@ -1,4 +1,5 @@
-import React, { useEffect, useState, Fragment} from 'react';
+import React, { useEffect, useState, Fragment } from 'react';
+import { Spin } from 'antd';
 import './App.scss';
 import { API } from './api';
 import {
@@ -7,11 +8,10 @@ import {
   PreviewData as PreviewDataInterface,
   MapModulesGroupsByStatus,
 } from './types';
-import {getModulesGroupsByStatus} from './helpers'
-import {PreviewData, Dashboard} from './components'
+import { getModulesGroupsByStatus } from './helpers';
+import { Dashboard, Loader } from './components';
 
 export const App = () => {
-
   const [previewData, setPreviewData] = useState<PreviewDataInterface[]>([]);
   const [modulesGroupsByStatus, setModulesGroupsByStatus] = useState<MapModulesGroupsByStatus>();
   const [isLoading, setIsLoading] = useState(true);
@@ -19,23 +19,27 @@ export const App = () => {
   useEffect(() => {
     API.getHeavyData().then((coursesData: HeavyResponse) => {
       setModulesGroupsByStatus(getModulesGroupsByStatus(coursesData));
-      setIsLoading(false)
+      setIsLoading(false);
     });
   }, []);
 
   useEffect(() => {
     API.getLightData().then(({ statuses }: LightResponse) => {
       setPreviewData(statuses);
-      setIsLoading(false)
+      setIsLoading(false);
     });
   }, []);
 
-  console.log('previewData', previewData)
-  console.log('modulesGroupsByStatus', modulesGroupsByStatus)
+  console.log('previewData', previewData);
+  console.log('modulesGroupsByStatus', modulesGroupsByStatus);
 
   return (
     <Fragment>
-      {isLoading? <div>Loading...</div> : modulesGroupsByStatus? <Dashboard /> : <PreviewData />}
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <Dashboard modulesGroupsByStatus={modulesGroupsByStatus} previewData={previewData} />
+      )}
     </Fragment>
-  )
-}
+  );
+};
