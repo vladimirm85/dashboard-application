@@ -5,7 +5,7 @@
   width: 100%;
   overflow: auto;
   background-color: $background-dark;
-  border-top: 1px solid rgb(235, 237, 240);
+  border-top: $dashboard-wrapper-border;
 
   .cards-container {
     display: flex;
@@ -14,13 +14,13 @@
 
     .cards-row {
       overflow-y: auto;
-      min-width: 400px;
+      min-width: $cards-row-width;
 
       padding: 0 1px;
 
       .ant-card {
         margin-bottom: $gap;
-        background-color: white;
+        background-color: $background-light;
 
         &-meta {
           margin-bottom: 20px;
@@ -31,15 +31,15 @@
         }
 
         &.active {
-          background-color: #ebf4fa;
+          background-color: $background-active;
         }
       }
 
       .module {
         height: 50px;
         margin: 5px 0;
-        border: 2px solid #e2e2e2;
-        border-left: 3px solid #5f6468;
+        border: $module-border;
+        border-left: $module-border-left;
         background-color: white;
 
         display: flex;
@@ -47,7 +47,7 @@
         align-items: center;
 
         &.active {
-          background-color: #ebf4fa;
+          background-color: $background-active;
         }
       }
 
@@ -55,13 +55,13 @@
         width: 14px;
       }
       &::-webkit-scrollbar-track {
-        background: #fafafa;
+        background: $scrollbar-track-color;
       }
       &::-webkit-scrollbar-thumb {
-        border: 3px solid #fafafa;
+        border: 3px solid $scrollbar-track-color;
         background-clip: padding-box;
         border-radius: 7px;
-        background-color: #c2c2c2;
+        background-color: $scrollbar-thumb-color;
       }
     }
   }

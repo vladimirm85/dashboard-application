@@ -1,0 +1,14 @@
+@import '../../scss/variables';
+
+.sidebar {
+  min-width: $sidebar-width;
+  margin-right: -$sidebar-width;
+  padding: $gap $gap 0 $gap;
+  transition: margin 700ms ease-in-out;
+
+  border-left: 1px solid grey;
+
+  &-active {
+    margin-right: 0;
+  }
+}

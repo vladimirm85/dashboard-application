@@ -40,3 +40,8 @@ export interface CoursesData {
   courses: Course[];
   statuses: Status[];
 }
+
+export interface SidebarData {
+  activeModulesGroup: ModulesGroupByStatus;
+  activeModuleId: string;
+}
