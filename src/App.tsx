@@ -1,5 +1,6 @@
 import React, { useEffect, useState, Fragment } from 'react';
-import { Spin } from 'antd';
+import { PageHeader, Input } from 'antd';
+import 'antd/dist/antd.css';
 import './App.scss';
 import { API } from './api';
 import {
@@ -30,15 +31,17 @@ export const App = () => {
     });
   }, []);
 
-  console.log('previewData', previewData);
-  console.log('modulesGroupsByStatus', modulesGroupsByStatus);
-
   return (
     <Fragment>
       {isLoading ? (
         <Loader />
       ) : (
-        <Dashboard modulesGroupsByStatus={modulesGroupsByStatus} previewData={previewData} />
+        <Fragment>
+          <PageHeader>
+            <Input.Search placeholder="input search text" onSearch={() => {}} className="test" />
+          </PageHeader>
+          <Dashboard modulesGroupsByStatus={modulesGroupsByStatus} previewData={previewData} />
+        </Fragment>
       )}
     </Fragment>
   );
