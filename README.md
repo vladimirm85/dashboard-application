@@ -7,33 +7,31 @@
 #### There are tons of video courses available. Each course has several modules. Each module has specific status. (in progress, submitted, ready to release etc). You need to represent modules in dashboard grouping by status.
 #### Let’s say, you have a course which has 6 modules (1 - in progress, 3 - submitted, 2 - ready for release). That means you need to represent 3 appropriate columns. In eac h column you should place a card with course name and subcards with module names as shown in screenshot
 
-![alt text](https://drive.google.com/uc?export=view&id=1AufbdWxTipQEJTPxshWRGa2B_x_iRNMP)
+![1 img](https://drive.google.com/uc?export=view&id=1AufbdWxTipQEJTPxshWRGa2B_x_iRNMP)
 
 #### You need to remember that there are plenty of another courses which modules have the same statuses. So you need to represent them as well, having a scroll bar for each column. (you don’t need to show scrollbar in case all items fit the screen)
 #### Once you click the card - sidebar rolls from the right side of the screen. Like in screenshot.
 
-![alt text](https://drive.google.com/uc?export=view&id=1T6qYHnxviJXYZNIHOrV_3tv4vE_dG8Qi)
+![2 img](https://drive.google.com/uc?export=view&id=1T6qYHnxviJXYZNIHOrV_3tv4vE_dG8Qi)
 
 #### In case you click on module - sidebar rolls with selected module highlighted. Vise versa is also desired (you click on module in sidebar and the appropriate subcard is highlighted)
 
-![alt text](https://drive.google.com/uc?export=view&id=1n8g8yufdGUaeFRSYP2Zw_Z3-woFktKCN)
+![3 img](https://drive.google.com/uc?export=view&id=1n8g8yufdGUaeFRSYP2Zw_Z3-woFktKCN)
 
 #### In sidebar you should represent all modules which belong to the selected course specifying the module status.
 #### Because you can have a lot of statuses, sidebar should move the horizontal scrollbar and don’t overlap the last column.
 
-![alt text](https://drive.google.com/uc?export=view&id=1sCuNFHXhJudc78Bes0VXp-9KrVtDPQdk)
+![4 img](https://drive.google.com/uc?export=view&id=1sCuNFHXhJudc78Bes0VXp-9KrVtDPQdk)
 
 #### You should also implement the ability to fuzzy search through the available content (search by module names and course names case-insensitive)
 #### Initially you don’t need to store any data on server. Just populate JSON objects. Once all requirements are fulfilled you should add the representation delay (simulate loading) and represent a content skeleton
 
-![alt text](https://drive.google.com/uc?export=view&id=1G0yBcbtFD4L2Gvsrvic8vbrKAWW_DOyC)
-
-https://drive.google.com/file/d/1G0yBcbtFD4L2Gvsrvic8vbrKAWW_DOyC/view?usp=sharing
+![5 img](https://drive.google.com/uc?export=view&id=1G0yBcbtFD4L2Gvsrvic8vbrKAWW_DOyC)
 
 #### Also you need to remember that representing too much items at the same time decreases the performance. Therefore you need to add a virtual scroll.
 ### In general it should look like this
 
-![alt text](https://drive.google.com/uc?export=view&id=1kWxnFZGzBcP6psC4ieB3i6x7R8gtNnP_)
+![6 img](https://drive.google.com/uc?export=view&id=1kWxnFZGzBcP6psC4ieB3i6x7R8gtNnP_)
 
 # This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
