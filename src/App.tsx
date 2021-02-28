@@ -1,48 +1,32 @@
-import React, { useEffect, useState} from 'react';
+import React, { useEffect, useState, Fragment} from 'react';
 import './App.scss';
 import { API } from './api';
 import {
   HeavyResponse,
   LightResponse,
-  PreviewData,
+  PreviewData as PreviewDataInterface,
   MapModulesGroupsByStatus,
-  CoursesData
 } from './types';
-
-export const getModulesData = ({ courses, statuses }: CoursesData): MapModulesGroupsByStatus => {
-  const modulesGroupsData: MapModulesGroupsByStatus = new Map();
-
-  statuses.forEach((statusData) => modulesGroupsData.set(statusData.name, []));
-
-  courses.forEach((course) => {
-    statuses.forEach((modulesStatus) => {
-      const modules = course.modules.filter((module) => module.status.name === modulesStatus.name);
-      if (modules.length) {
-        modulesGroupsData.get(modulesStatus.name)?.push({
-          courseName: course.name,
-          modules,
-        });
-      }
-    });
-  });
-
-  return modulesGroupsData;
-};
+import {getModulesGroupsByStatus} from './helpers'
+import {PreviewData, Dashboard} from './components'
 
 export const App = () => {
 
-  const [previewData, setPreviewData] = useState<PreviewData[]>([]);
+  const [previewData, setPreviewData] = useState<PreviewDataInterface[]>([]);
   const [modulesGroupsByStatus, setModulesGroupsByStatus] = useState<MapModulesGroupsByStatus>();
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     API.getHeavyData().then((coursesData: HeavyResponse) => {
-      setModulesGroupsByStatus(getModulesData(coursesData));
+      setModulesGroupsByStatus(getModulesGroupsByStatus(coursesData));
+      setIsLoading(false)
     });
   }, []);
 
   useEffect(() => {
     API.getLightData().then(({ statuses }: LightResponse) => {
       setPreviewData(statuses);
+      setIsLoading(false)
     });
   }, []);
 
@@ -50,6 +34,8 @@ export const App = () => {
   console.log('modulesGroupsByStatus', modulesGroupsByStatus)
 
   return (
-  <div>Hello world</div>
+    <Fragment>
+      {isLoading? <div>Loading...</div> : modulesGroupsByStatus? <Dashboard /> : <PreviewData />}
+    </Fragment>
   )
 }
