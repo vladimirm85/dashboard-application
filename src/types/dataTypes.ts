@@ -28,3 +28,15 @@ export interface PreviewData {
 export interface LightResponse {
   statuses: PreviewData[];
 }
+
+export interface ModulesGroupByStatus {
+  courseName: string;
+  modules: Module[];
+}
+
+export type MapModulesGroupsByStatus = Map<string, ModulesGroupByStatus[]>;
+
+export interface CoursesData {
+  courses: Course[];
+  statuses: Status[];
+}
