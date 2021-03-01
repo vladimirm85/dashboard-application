@@ -2,11 +2,11 @@
   "courses": [
     {
       "id": "c1",
-      "name": "Course search2 1",
+      "name": "Course 1",
       "modules": [
         {
           "id": "m1",
-          "name": "Module search1 1",
+          "name": "Module 1",
           "status": {
             "id": "s1",
             "name": "In progress"
@@ -30,7 +30,7 @@
         },
         {
           "id": "m4",
-          "name": "Module search1 4",
+          "name": "Module 4",
           "status": {
             "id": "s1",
             "name": "In progress"
@@ -38,7 +38,7 @@
         },
         {
           "id": "m5",
-          "name": "Module search2 5",
+          "name": "Module 5",
           "status": {
             "id": "s1",
             "name": "In progress"
@@ -236,7 +236,7 @@
       "modules": [
         {
           "id": "m26",
-          "name": "Module search2 26",
+          "name": "Module search4 26",
           "status": {
             "id": "s1",
             "name": "In progress"
@@ -244,7 +244,7 @@
         },
         {
           "id": "m27",
-          "name": "Module search1 27",
+          "name": "Module 27",
           "status": {
             "id": "s2",
             "name": "Submitted"
@@ -260,7 +260,7 @@
         },
         {
           "id": "m29",
-          "name": "Module search3 29",
+          "name": "Module 29",
           "status": {
             "id": "s1",
             "name": "In progress"
@@ -268,7 +268,7 @@
         },
         {
           "id": "m30",
-          "name": "Module search3 30",
+          "name": "Module 30",
           "status": {
             "id": "s1",
             "name": "In progress"
@@ -276,7 +276,7 @@
         },
         {
           "id": "m31",
-          "name": "Module search3 31",
+          "name": "Module 31",
           "status": {
             "id": "s2",
             "name": "Submitted"
@@ -284,7 +284,7 @@
         },
         {
           "id": "m32",
-          "name": "Module search3 32",
+          "name": "Module 32",
           "status": {
             "id": "s2",
             "name": "Submitted"
@@ -292,7 +292,7 @@
         },
         {
           "id": "m33",
-          "name": "Module search3 33",
+          "name": "Module 33",
           "status": {
             "id": "s3",
             "name": "Ready for release"

@@ -53,4 +53,5 @@ export interface StateInterface {
   modulesGroupsByStatus: MapModulesGroupsByStatus;
   isSidebarOpen: boolean;
   sidebarData: SidebarData;
+  searchValue: string;
 }

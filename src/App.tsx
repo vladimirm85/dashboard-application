@@ -14,6 +14,9 @@ import {
   dataFailure,
   setSidebarData,
   closeSidebar,
+  setActiveModule,
+  clearSidebarData,
+  setSearchValue,
 } from './reducer';
 import { HeavyResponse, LightResponse, SidebarData } from './types';
 import { getModulesGroupsByStatus } from './helpers';
@@ -21,7 +24,14 @@ import { Dashboard, Loader, Slider } from './components';
 
 export const App = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  const { isLoading, previewData, modulesGroupsByStatus, isSidebarOpen, sidebarData } = state;
+  const {
+    isLoading,
+    previewData,
+    modulesGroupsByStatus,
+    isSidebarOpen,
+    sidebarData,
+    searchValue,
+  } = state;
 
   useEffect(() => {
     dispatch(previewDataRequest());
@@ -42,7 +52,14 @@ export const App = () => {
   }, []);
 
   const setSidebarDataCb = (sidebarData: SidebarData) => dispatch(setSidebarData(sidebarData));
+  const setActiveModuleCb = (id: string) => dispatch(setActiveModule(id));
   const closeSidebarCb = () => dispatch(closeSidebar());
+  const clearSidebarDataCb = () => dispatch(clearSidebarData());
+  const onSearch = (inputSearchValue: string) => {
+    if (modulesGroupsByStatus.size) {
+      dispatch(setSearchValue(inputSearchValue));
+    }
+  };
 
   return (
     <Fragment>
@@ -51,10 +68,16 @@ export const App = () => {
       ) : (
         <Fragment>
           <PageHeader>
-            <Input.Search placeholder="input search text" onSearch={() => {}} className="test" />
+            <Input.Search
+              allowClear
+              placeholder="input search text"
+              onSearch={onSearch}
+              className="test"
+            />
           </PageHeader>
           <div className="body-wrapper">
             <Dashboard
+              searchValue={searchValue}
               modulesGroupsByStatus={modulesGroupsByStatus}
               previewData={previewData}
               sidebarData={sidebarData}
@@ -63,7 +86,9 @@ export const App = () => {
             <Slider
               isSidebarOpen={isSidebarOpen}
               sidebarData={sidebarData}
+              setActiveModuleCb={setActiveModuleCb}
               closeSidebarCb={closeSidebarCb}
+              clearSidebarDataCb={clearSidebarDataCb}
             />
           </div>
         </Fragment>

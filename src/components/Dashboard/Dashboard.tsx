@@ -1,4 +1,4 @@
-import { getCards } from '../../helpers';
+import { getCards, getModulesGroupsData, getModulesData } from '../../helpers';
 import 'antd/dist/antd.css';
 import './Dashboard.scss';
 import {
@@ -12,6 +12,7 @@ interface PropsType {
   previewData: previewDataInterface[];
   setSidebarDataCb: (sidebarData: SidebarData) => void;
   sidebarData: SidebarData;
+  searchValue: string;
 }
 
 export const Dashboard = ({
@@ -19,9 +20,18 @@ export const Dashboard = ({
   previewData,
   setSidebarDataCb,
   sidebarData,
+  searchValue,
 }: PropsType) => {
-  const dashboardData = previewData.map((data, index) => {
-    const cards = getCards(data, modulesGroupsByStatus, sidebarData, setSidebarDataCb);
+  let modulesGroupsData = modulesGroupsByStatus;
+  let modulesData = previewData;
+
+  if (modulesGroupsByStatus?.size) {
+    modulesGroupsData = getModulesGroupsData(modulesGroupsByStatus, searchValue);
+    modulesData = getModulesData(modulesGroupsData);
+  }
+
+  const dashboardData = modulesData.map((data, index) => {
+    const cards = getCards(data, modulesGroupsData, sidebarData, setSidebarDataCb);
     return (
       <div key={`pd${index}`} id={data.status.name} className="cards-container">
         <h3>{data.status.name}</h3>

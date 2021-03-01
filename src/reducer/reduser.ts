@@ -16,6 +16,7 @@ export const initialState: StateInterface = {
   modulesGroupsByStatus: new Map(),
   isSidebarOpen: false,
   sidebarData: initialSidebarData,
+  searchValue: '',
 };
 
 export const reducer = (state: StateInterface, action: ReducerAction) => {
@@ -26,10 +27,11 @@ export const reducer = (state: StateInterface, action: ReducerAction) => {
         isLoading: true,
       };
     case ReducerActionsTypes.previewDataSuccess:
+      const { previewData } = action.payload;
       return {
         ...state,
         isLoading: false,
-        previewData: action.payload.previewData,
+        previewData,
       };
     case ReducerActionsTypes.previewDataFailure:
       return {
@@ -42,10 +44,11 @@ export const reducer = (state: StateInterface, action: ReducerAction) => {
         isLoading: true,
       };
     case ReducerActionsTypes.dataSuccess:
+      const { modulesGroupsByStatus } = action.payload;
       return {
         ...state,
         isLoading: false,
-        modulesGroupsByStatus: action.payload.modulesGroupsByStatus,
+        modulesGroupsByStatus,
       };
     case ReducerActionsTypes.dataFailure:
       return {
@@ -64,6 +67,15 @@ export const reducer = (state: StateInterface, action: ReducerAction) => {
           activeModulesGroup,
         },
       };
+    case ReducerActionsTypes.setActiveModule:
+      const { id } = action.payload;
+      return {
+        ...state,
+        sidebarData: {
+          ...state.sidebarData,
+          activeModuleId: id,
+        },
+      };
     case ReducerActionsTypes.closeSidebar:
       return {
         ...state,
@@ -74,6 +86,12 @@ export const reducer = (state: StateInterface, action: ReducerAction) => {
         ...state,
         isSidebarOpen: false,
         sidebarData: initialSidebarData,
+      };
+    case ReducerActionsTypes.setSearchValue:
+      const { searchValue } = action.payload;
+      return {
+        ...state,
+        searchValue,
       };
     default:
       return state;

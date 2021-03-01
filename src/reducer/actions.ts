@@ -90,3 +90,31 @@ export interface ClearSidebarData {
 export const clearSidebarData = (): ClearSidebarData => ({
   type: ReducerActionsTypes.clearSidebarData,
 });
+
+export interface SetActiveModule {
+  type: ReducerActionsTypes.setActiveModule;
+  payload: {
+    id: string;
+  };
+}
+
+export const setActiveModule = (id: string): SetActiveModule => ({
+  type: ReducerActionsTypes.setActiveModule,
+  payload: {
+    id,
+  },
+});
+
+export interface SetSearchValue {
+  type: ReducerActionsTypes.setSearchValue;
+  payload: {
+    searchValue: string;
+  };
+}
+
+export const setSearchValue = (searchValue: string): SetSearchValue => ({
+  type: ReducerActionsTypes.setSearchValue,
+  payload: {
+    searchValue,
+  },
+});

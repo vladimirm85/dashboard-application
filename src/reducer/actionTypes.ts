@@ -6,8 +6,10 @@ import {
   DataSuccess,
   DataFailure,
   SetSidebarData,
+  SetActiveModule,
   CloseSidebar,
   ClearSidebarData,
+  SetSearchValue,
 } from './actions';
 
 export enum ReducerActionsTypes {
@@ -18,8 +20,10 @@ export enum ReducerActionsTypes {
   dataSuccess = 'DATA_SUCCESS',
   dataFailure = 'DATA_FAILURE',
   setSidebarData = 'SET_SIDEBAR_DATA',
+  setActiveModule = 'SET_ACTIVE_MODULE',
   closeSidebar = 'CLOSE_SIDEBAR',
   clearSidebarData = 'CLEAR_SIDEBAR_DATA',
+  setSearchValue = 'SET_SEARCH_VALUE',
 }
 
 export type ReducerAction =
@@ -30,5 +34,7 @@ export type ReducerAction =
   | DataSuccess
   | DataFailure
   | SetSidebarData
+  | SetActiveModule
   | CloseSidebar
+  | SetSearchValue
   | ClearSidebarData;
