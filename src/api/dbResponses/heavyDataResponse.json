@@ -885,6 +885,132 @@
           }
         }
       ]
+    },
+    {
+      "id": "c18",
+      "name": "Course 18",
+      "modules": [
+        {
+          "id": "m98",
+          "name": "Module 98",
+          "status": {
+            "id": "s1",
+            "name": "In progress"
+          }
+        }
+      ]
+    },
+    {
+      "id": "c19",
+      "name": "Course 19",
+      "modules": [
+        {
+          "id": "m99",
+          "name": "Module 99",
+          "status": {
+            "id": "s1",
+            "name": "In progress"
+          }
+        }
+      ]
+    },
+    {
+      "id": "c20",
+      "name": "Course 20",
+      "modules": [
+        {
+          "id": "m100",
+          "name": "Module 100",
+          "status": {
+            "id": "s1",
+            "name": "In progress"
+          }
+        }
+      ]
+    },
+    {
+      "id": "c21",
+      "name": "Course 21",
+      "modules": [
+        {
+          "id": "m101",
+          "name": "Module 101",
+          "status": {
+            "id": "s1",
+            "name": "In progress"
+          }
+        }
+      ]
+    },
+    {
+      "id": "c22",
+      "name": "Course 22",
+      "modules": [
+        {
+          "id": "m102",
+          "name": "Module 102",
+          "status": {
+            "id": "s1",
+            "name": "In progress"
+          }
+        }
+      ]
+    },
+    {
+      "id": "c23",
+      "name": "Course 23",
+      "modules": [
+        {
+          "id": "m103",
+          "name": "Module 103",
+          "status": {
+            "id": "s1",
+            "name": "In progress"
+          }
+        }
+      ]
+    },
+    {
+      "id": "c24",
+      "name": "Course 24",
+      "modules": [
+        {
+          "id": "m104",
+          "name": "Module 104",
+          "status": {
+            "id": "s1",
+            "name": "In progress"
+          }
+        }
+      ]
+    },
+    {
+      "id": "c25",
+      "name": "Course 25",
+      "modules": [
+        {
+          "id": "m105",
+          "name": "Module 105",
+          "status": {
+            "id": "s1",
+            "name": "In progress"
+          }
+        }
+      ]
+    },
+    {
+      "id": "c26",
+      "name": "Course 26",
+      "modules": [
+        {
+          "id": "m106",
+          "name": "Module 106",
+          "status": {
+            "id": "s1",
+            "name": "In progress"
+          }
+        }
+      ]
     }
   ],
   "statuses": [
